@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Models {% endblock %}</h1>
+{% for model in models %}
+<div class='model'>
+  <p>{{ model['m_created'] }}</p>
+  <h2>{{ model['m_name'] }}</h2>
+  <p>{{ model['m_description'] }}</p>
+  <p>{{ model['m_version'] }}</p>
+  <a href="{{ url_for('edit', id=model['id']) }}">Edit</a>
+</div>
+{% endfor %}
+{% endblock %}
